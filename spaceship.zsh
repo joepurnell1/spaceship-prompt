@@ -48,16 +48,16 @@ if [ -z "$SPACESHIP_PROMPT_ORDER" ]; then
     hg            # Mercurial section (hg_branch  + hg_status)
     package       # Package version
     node          # Node.js section
-    ruby          # Ruby section
-    elm           # Elm section
-    elixir        # Elixir section
-    xcode         # Xcode section
-    swift         # Swift section
-    golang        # Go section
-    php           # PHP section
-    rust          # Rust section
-    haskell       # Haskell Stack section
-    julia         # Julia section
+    # ruby          # Ruby section
+    # elm           # Elm section
+    # elixir        # Elixir section
+    # xcode         # Xcode section
+    # swift         # Swift section
+    # golang        # Go section
+    # php           # PHP section
+    # rust          # Rust section
+    # haskell       # Haskell Stack section
+    # julia         # Julia section
     docker        # Docker section
     aws           # Amazon Web Services section
     venv          # virtualenv section
@@ -65,12 +65,12 @@ if [ -z "$SPACESHIP_PROMPT_ORDER" ]; then
     pyenv         # Pyenv section
     dotnet        # .NET section
     ember         # Ember.js section
-    kubecontext   # Kubectl context section
+    # kubecontext   # Kubectl context section
     terraform     # Terraform workspace section
     exec_time     # Execution time
     line_sep      # Line break
-    battery       # Battery level and status
-    vi_mode       # Vi-mode indicator
+    # battery       # Battery level and status
+    # vi_mode       # Vi-mode indicator
     jobs          # Background jobs indicator
     exit_code     # Exit code section
     char          # Prompt character
@@ -86,7 +86,7 @@ fi
 # PROMPT
 SPACESHIP_PROMPT_ADD_NEWLINE="${SPACESHIP_PROMPT_ADD_NEWLINE=true}"
 SPACESHIP_PROMPT_SEPARATE_LINE="${SPACESHIP_PROMPT_SEPARATE_LINE=true}"
-SPACESHIP_PROMPT_FIRST_PREFIX_SHOW="${SPACESHIP_PROMPT_FIRST_PREFIX_SHOW=false}"
+SPACESHIP_PROMPT_FIRST_PREFIX_SHOW="${SPACESHIP_PROMPT_FIRST_PREFIX_SHOW=true}"
 SPACESHIP_PROMPT_PREFIXES_SHOW="${SPACESHIP_PROMPT_PREFIXES_SHOW=true}"
 SPACESHIP_PROMPT_SUFFIXES_SHOW="${SPACESHIP_PROMPT_SUFFIXES_SHOW=true}"
 SPACESHIP_PROMPT_DEFAULT_PREFIX="${SPACESHIP_PROMPT_DEFAULT_PREFIX="via "}"

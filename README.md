@@ -56,6 +56,34 @@
 
 Spaceship is a minimalistic, powerful and extremely customizable [Zsh][zsh-url] prompt. It combines everything you may need for convenient work, without unnecessary complications, like a real spaceship.
 
+---
+
+## The Joe Edition
+
+This fork of Spaceship ZSH is essentially an opinionated version. I have disabled the follow checks:
+
+- ruby
+- elm
+- elixir
+- xcode
+- swift
+- golang
+- php
+- rust
+- haskell
+- julia
+- kubecontext
+- battery
+- vi_mode
+
+I have also disabled the git stash indicator.
+
+On top of this that package indicator now shoes the packager rather than the version (npm or yarn).
+
+To use this version you must perform a manual install (below).
+
+---
+
 <p align="center">
   <img alt="Spaceship with Hyper and One Dark" src="https://user-images.githubusercontent.com/10276208/36086434-5de52ace-0ff2-11e8-8299-c67f9ab4e9bd.gif" width="980px">
 </p>

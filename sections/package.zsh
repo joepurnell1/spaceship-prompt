@@ -11,7 +11,7 @@
 # ------------------------------------------------------------------------------
 
 SPACESHIP_PACKAGE_SHOW="${SPACESHIP_PACKAGE_SHOW=true}"
-SPACESHIP_PACKAGE_PREFIX="${SPACESHIP_PACKAGE_PREFIX="is "}"
+SPACESHIP_PACKAGE_PREFIX="${SPACESHIP_PACKAGE_PREFIX="use "}"
 SPACESHIP_PACKAGE_SUFFIX="${SPACESHIP_PACKAGE_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"}"
 SPACESHIP_PACKAGE_SYMBOL="${SPACESHIP_PACKAGE_SYMBOL="📦 "}"
 SPACESHIP_PACKAGE_COLOR="${SPACESHIP_PACKAGE_COLOR="red"}"
@@ -44,11 +44,20 @@ spaceship_package() {
     echo $pkgid | grep -q "error:" || package_version=${pkgid##*\#}
   fi
 
-  [[ -z $package_version || "$package_version" == "null" || "$package_version" == "undefined" ]] && return
+  if [[ -f package-lock.json ]]; then
+    packager="npm"
+  elif [[ -f yarn.lock ]]; then
+    packager="yarn"
+  elif [[ -f yarn.lock ]] && [[ -f package-lock.json ]]; then
+    packager="both?"
+  fi
+
+  [[ -z $packager || "$packager" == "null" || "$packager" == "undefined" ]] && return
+  # [[ -z $package_version || "$package_version" == "null" || "$package_version" == "undefined" ]] && return
 
   spaceship::section \
     "$SPACESHIP_PACKAGE_COLOR" \
     "$SPACESHIP_PACKAGE_PREFIX" \
-    "${SPACESHIP_PACKAGE_SYMBOL}v${package_version}" \
+    "${SPACESHIP_PACKAGE_SYMBOL} ${packager}" \
     "$SPACESHIP_PACKAGE_SUFFIX"
 }

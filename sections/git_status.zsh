@@ -71,9 +71,9 @@ spaceship_git_status() {
   fi
 
   # Check for stashes
-  if $(command git rev-parse --verify refs/stash >/dev/null 2>&1); then
-    git_status="$SPACESHIP_GIT_STATUS_STASHED$git_status"
-  fi
+  # if $(command git rev-parse --verify refs/stash >/dev/null 2>&1); then
+  #   git_status="$SPACESHIP_GIT_STATUS_STASHED$git_status"
+  # fi
 
   # Check for unmerged files
   if $(echo "$INDEX" | command grep '^U[UDA] ' &> /dev/null); then
